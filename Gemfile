@@ -5,7 +5,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.1'
 # Use sqlite3 as the database for Active Record
 #gem 'sqlite3'
-gem 'sqlite3', groups: %w(test development), require: false
+# gem 'sqlite3', groups: %w(test development), require: false
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -47,8 +47,8 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 group :test do
-  gem 'selenium-webdriver', '2.35.1'
   gem 'capybara', '2.1.0'
+  gem 'selenium-webdriver', '2.35.1'
 end
 
 group :production do
