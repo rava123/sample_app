@@ -35,7 +35,7 @@ describe "Static pages" do
     end
 
     it "should have the title 'Help'" do
-    	visit '/static_pages/home'
+    	visit '/static_pages/help'
     	expect(page).to have_title("Ruby on Rails Tutorial Sample App | Help")
     end
 
