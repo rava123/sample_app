@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
   resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  root 'static_pages#home'
+  
   match '/signup',   to: 'users#new',            via: 'get'
+  match '/signin',   to: 'sessions#new',         via: 'get'
+  match '/signout',  to: 'sessions#destroy',     via: 'delete'
+  
   match '/help',    to: 'static_pages#help',    via: 'get'
   match '/about',   to: 'static_pages#about',   via: 'get'
   match '/contact', to: 'static_pages#contact', via: 'get'
@@ -9,7 +15,6 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'static_pages#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
